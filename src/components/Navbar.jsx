@@ -18,7 +18,7 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(
-    window.location.hash || "#hero"
+    window.location.hash || "#hero",
   );
 
   const navLinks = [
@@ -96,14 +96,10 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
 
     if (target) {
       const header = document.querySelector("header");
-      const headerHeight =
-        header?.getBoundingClientRect().height || 90;
+      const headerHeight = header?.getBoundingClientRect().height || 90;
 
       const targetPosition =
-        target.getBoundingClientRect().top +
-        window.scrollY -
-        headerHeight +
-        8;
+        target.getBoundingClientRect().top + window.scrollY - headerHeight + 8;
 
       window.scrollTo({
         top: Math.max(0, targetPosition),
@@ -156,9 +152,7 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
       {/* Top Information Bar */}
       <div
         className={`hidden md:block overflow-hidden transition-all duration-300 ${
-          isScrolled
-            ? "max-h-0 opacity-0"
-            : "max-h-16 opacity-100"
+          isScrolled ? "max-h-0 opacity-0" : "max-h-16 opacity-100"
         }`}
       >
         <div className="bg-[#091426] border-b border-white/[0.07] px-6 xl:px-10">
@@ -183,13 +177,11 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
 
             <div className="flex items-center gap-5">
               <a
-                href={`tel:${contact?.phoneTel || "+919876543210"}`}
+                href={`tel:${contact?.phoneTel || "+919868565968"}`}
                 className="flex items-center gap-2 hover:text-orange-300 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-orange-400" />
-                <span>
-                  {contact?.phone || "+91 98765 43210"}
-                </span>
+                <span>{contact?.phone || "+91 9868565968"}</span>
               </a>
 
               <a
@@ -197,9 +189,7 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
                 className="hidden lg:flex items-center gap-2 hover:text-orange-300 transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-orange-400" />
-                <span>
-                  {contact?.email || "testing@atml-lab.com"}
-                </span>
+                <span>{contact?.email || "testing@atml-lab.com"}</span>
               </a>
             </div>
           </div>
@@ -257,9 +247,7 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
                   onClick={() => setMoreOpen((prev) => !prev)}
                   aria-expanded={moreOpen}
                   className={`flex items-center gap-1 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                    moreLinks.some(
-                      (link) => link.href === activeSection
-                    )
+                    moreLinks.some((link) => link.href === activeSection)
                       ? "text-amber-300 bg-amber-400/10"
                       : "text-slate-300 hover:text-amber-300 hover:bg-white/[0.06]"
                   }`}
@@ -278,13 +266,9 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
                       <a
                         key={link.name}
                         href={link.href}
-                        onClick={(e) =>
-                          handleNavClick(e, link.href)
-                        }
+                        onClick={(e) => handleNavClick(e, link.href)}
                         aria-current={
-                          activeSection === link.href
-                            ? "page"
-                            : undefined
+                          activeSection === link.href ? "page" : undefined
                         }
                         className={getDropdownLinkClass(link.href)}
                       >
@@ -311,22 +295,16 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-400 px-3 sm:px-4 py-2.5 text-xs sm:text-sm font-bold text-white shadow-lg shadow-orange-500/15 transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
               >
                 <FileText className="w-4 h-4" />
-                <span className="hidden sm:inline">
-                  Request a Quote
-                </span>
+                <span className="hidden sm:inline">Request a Quote</span>
                 <span className="sm:hidden">Quote</span>
               </a>
 
               <button
                 type="button"
-                onClick={() =>
-                  setMobileMenuOpen((prev) => !prev)
-                }
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
                 className="xl:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 text-slate-200 hover:text-white hover:bg-white/[0.07] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
                 aria-expanded={mobileMenuOpen}
-                aria-label={
-                  mobileMenuOpen ? "Close menu" : "Open menu"
-                }
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {mobileMenuOpen ? (
                   <X className="w-5 h-5" />
@@ -351,13 +329,9 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) =>
-                      handleNavClick(e, link.href)
-                    }
+                    onClick={(e) => handleNavClick(e, link.href)}
                     aria-current={
-                      activeSection === link.href
-                        ? "page"
-                        : undefined
+                      activeSection === link.href ? "page" : undefined
                     }
                     className={getMobileLinkClass(link.href)}
                   >

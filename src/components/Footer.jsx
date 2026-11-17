@@ -1,23 +1,23 @@
-import React from 'react';
-import { 
-  FlaskConical, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  MessageSquare, 
-  ArrowUp, 
-  ShieldCheck, 
-  ChevronRight 
-} from 'lucide-react';
-import { labConfig } from '../data/labConfig';
-import { serviceCategories } from '../data/servicesData';
+import React from "react";
+import {
+  FlaskConical,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageSquare,
+  ArrowUp,
+  ShieldCheck,
+  ChevronRight,
+} from "lucide-react";
+import { labConfig } from "../data/labConfig";
+import { serviceCategories } from "../data/servicesData";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
 export const Footer = ({ onOpenLegalModal }) => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -33,9 +33,7 @@ export const Footer = ({ onOpenLegalModal }) => {
               <span className="text-xl font-bold font-display tracking-tight text-white">
                 {labConfig.name}
               </span>
-              <p className="text-xs text-graphite-400">
-                {labConfig.legalName}
-              </p>
+              <p className="text-xs text-graphite-400">{labConfig.legalName}</p>
             </div>
           </div>
 
@@ -66,11 +64,23 @@ export const Footer = ({ onOpenLegalModal }) => {
               About the Laboratory
             </h4>
             <p className="text-xs sm:text-sm text-graphite-400 leading-relaxed">
-              {labConfig?.description || "Professional bitumen, highway, and construction material testing services to support quality, safety, and performance."} Dedicated to technical precision, method-based compliance, and uncompromised testing data for highway and infrastructure projects.
+              {labConfig?.description ||
+                "Professional bitumen, highway, and construction material testing services to support quality, safety, and performance."}{" "}
+              Dedicated to technical precision, method-based compliance, and
+              uncompromised testing data for highway and infrastructure
+              projects.
             </p>
             <div className="pt-2 text-xs text-graphite-400 space-y-1">
-              <div><strong>Receiving Hours:</strong> {labConfig?.contact?.workingHours?.sampleReceiving || "Mon–Sat: 9:30 AM – 5:30 PM"}</div>
-              <div><strong>Operating Days:</strong> {labConfig?.contact?.workingHours?.weekdays || "Mon–Sat: 9:00 AM – 6:30 PM"}</div>
+              <div>
+                <strong>Receiving Hours:</strong>{" "}
+                {labConfig?.contact?.workingHours?.sampleReceiving ||
+                  "Mon–Sat: 9:30 AM – 5:30 PM"}
+              </div>
+              <div>
+                <strong>Operating Days:</strong>{" "}
+                {labConfig?.contact?.workingHours?.weekdays ||
+                  "Mon–Sat: 9:00 AM – 6:30 PM"}
+              </div>
             </div>
           </div>
 
@@ -82,8 +92,8 @@ export const Footer = ({ onOpenLegalModal }) => {
             <ul className="space-y-2 text-xs text-graphite-400">
               {serviceCategories.map((cat) => (
                 <li key={cat.id}>
-                  <a 
-                    href="#services" 
+                  <a
+                    href="#services"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
                   >
                     <ChevronRight className="w-3 h-3 text-safety-500" />
@@ -100,15 +110,72 @@ export const Footer = ({ onOpenLegalModal }) => {
               Quick Links
             </h4>
             <ul className="space-y-2 text-xs text-graphite-400">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Testing Services</a></li>
-              <li><a href="#equipment" className="hover:text-white transition-colors">Machinery & Apparatus</a></li>
-              <li><a href="#process" className="hover:text-white transition-colors">Testing Workflow</a></li>
-              <li><a href="#why-us" className="hover:text-white transition-colors">Why Choose Us</a></li>
-              <li><a href="#standards" className="hover:text-white transition-colors">Standards & Codes</a></li>
-              <li><a href="#gallery" className="hover:text-white transition-colors">Lab Photo Gallery</a></li>
-              <li><a href="#faqs" className="hover:text-white transition-colors">Technical FAQs</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Request a Quote</a></li>
+              <li>
+                <a href="#about" className="hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-white transition-colors"
+                >
+                  Testing Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#equipment"
+                  className="hover:text-white transition-colors"
+                >
+                  Machinery & Apparatus
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  className="hover:text-white transition-colors"
+                >
+                  Testing Workflow
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#why-us"
+                  className="hover:text-white transition-colors"
+                >
+                  Why Choose Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#standards"
+                  className="hover:text-white transition-colors"
+                >
+                  Standards & Codes
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  className="hover:text-white transition-colors"
+                >
+                  Lab Photo Gallery
+                </a>
+              </li>
+              <li>
+                <a href="#faqs" className="hover:text-white transition-colors">
+                  Technical FAQs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-white transition-colors"
+                >
+                  Request a Quote
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -120,23 +187,37 @@ export const Footer = ({ onOpenLegalModal }) => {
             <div className="space-y-3 text-xs text-graphite-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-safety-500 shrink-0 mt-0.5" />
-                <span>{labConfig?.contact?.address?.line1 || "Plot 48, Highway Industrial Corridor"}, {labConfig?.contact?.address?.city || "Gurugram"}, {labConfig?.contact?.address?.state || "Haryana"}</span>
+                <span>
+                  {labConfig?.contact?.address?.line1 ||
+                    "Plot 48, Highway Industrial Corridor"}
+                  , {labConfig?.contact?.address?.city || "Gurugram"},{" "}
+                  {labConfig?.contact?.address?.state || "Haryana"}
+                </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-safety-500 shrink-0" />
-                <a href={`tel:${labConfig?.contact?.phoneTel || "+919876543210"}`} className="hover:text-white transition-colors">
-                  {labConfig?.contact?.phone || "+91 98765 43210"}
+                <a
+                  href={`tel:${labConfig?.contact?.phoneTel || "+919868565968"}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {labConfig?.contact?.phone || "+91 9868565968"}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-safety-500 shrink-0" />
-                <a href={`mailto:${labConfig?.contact?.email || "testing@atml-lab.com"}`} className="hover:text-white transition-colors">
+                <a
+                  href={`mailto:${labConfig?.contact?.email || "testing@atml-lab.com"}`}
+                  className="hover:text-white transition-colors"
+                >
                   {labConfig?.contact?.email || "testing@atml-lab.com"}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-safety-500 shrink-0" />
-                <span>{labConfig?.contact?.workingHours?.weekdays || "Mon–Sat: 9:00 AM – 6:30 PM"}</span>
+                <span>
+                  {labConfig?.contact?.workingHours?.weekdays ||
+                    "Mon–Sat: 9:00 AM – 6:30 PM"}
+                </span>
               </div>
             </div>
 
@@ -155,7 +236,13 @@ export const Footer = ({ onOpenLegalModal }) => {
         {/* Regulatory Accreditation Disclaimer Box */}
         <div className="mt-12 p-4 rounded-xl bg-navy-900/60 border border-navy-800 text-[11px] text-graphite-400 leading-relaxed">
           <p>
-            <strong>Compliance Notice:</strong> {labConfig?.disclaimers?.accreditationNote || "All tests follow published standard test procedures."} Testing equipment is calibrated against traceable reference standards. Mention of testing standards (IS / ASTM / IRC / MoRTH) indicates adherence to published technical methods and does not constitute government representation.
+            <strong>Compliance Notice:</strong>{" "}
+            {labConfig?.disclaimers?.accreditationNote ||
+              "All tests follow published standard test procedures."}{" "}
+            Testing equipment is calibrated against traceable reference
+            standards. Mention of testing standards (IS / ASTM / IRC / MoRTH)
+            indicates adherence to published technical methods and does not
+            constitute government representation.
           </p>
         </div>
       </div>
@@ -164,18 +251,19 @@ export const Footer = ({ onOpenLegalModal }) => {
       <div className="border-t border-navy-800/80 py-6 bg-navy-950 text-xs text-graphite-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            © {CURRENT_YEAR} {labConfig?.legalName || "ATML Laboratory"}. All rights reserved.
+            © {CURRENT_YEAR} {labConfig?.legalName || "ATML Laboratory"}. All
+            rights reserved.
           </div>
 
           <div className="flex items-center gap-6">
             <button
-              onClick={() => onOpenLegalModal('privacy')}
+              onClick={() => onOpenLegalModal("privacy")}
               className="hover:text-graphite-300 transition-colors"
             >
               Privacy Policy
             </button>
             <button
-              onClick={() => onOpenLegalModal('terms')}
+              onClick={() => onOpenLegalModal("terms")}
               className="hover:text-graphite-300 transition-colors"
             >
               Terms of Service

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { MessageSquare, X } from 'lucide-react';
-import { labConfig } from '../data/labConfig';
+import React, { useState } from "react";
+import { MessageSquare, X } from "lucide-react";
+import { labConfig } from "../data/labConfig";
 
 export const WhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(true);
 
   const number = labConfig?.contact?.whatsapp?.number || "919876543210";
-  const message = labConfig?.contact?.whatsapp?.defaultMessage || "Hello ATML Laboratory, I would like to inquire about testing services.";
+  const message =
+    labConfig?.contact?.whatsapp?.defaultMessage ||
+    "Hello NIMTL Laboratory, I would like to inquire about testing services.";
   const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -30,7 +32,7 @@ export const WhatsAppButton = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp with ATML Testing Engineers"
+        aria-label="Chat on WhatsApp with NIMTL Testing Engineers"
         className="relative flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/30 transition-transform duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-4 focus:ring-emerald-300"
       >
         <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-safety-500 rounded-full border-2 border-white animate-ping" />

@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
-import { 
-  ArrowRight, 
-  FileText, 
-  CheckCircle2, 
-  Shield, 
-  Layers, 
-  Gauge 
-} from 'lucide-react';
-import gsap from 'gsap';
-import { labConfig } from '../data/labConfig';
+import React, { useEffect, useRef } from "react";
+import {
+  ArrowRight,
+  FileText,
+  CheckCircle2,
+  Shield,
+  Layers,
+  Gauge,
+} from "lucide-react";
+import gsap from "gsap";
+import { labConfig } from "../data/labConfig";
 
 export const Hero = ({ onExploreServices, onRequestQuote }) => {
   const heroRef = useRef(null);
@@ -17,130 +17,163 @@ export const Hero = ({ onExploreServices, onRequestQuote }) => {
   const buttonsRef = useRef(null);
   const trustStripRef = useRef(null);
 
+  // GSAP Animations
   useEffect(() => {
-    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+      });
 
       if (headlineRef.current) {
         tl.from(headlineRef.current, {
-          y: 35,
+          y: 30,
           opacity: 0,
-          duration: 0.9,
+          duration: 0.8,
         });
       }
+
       if (subtextRef.current) {
-        tl.from(subtextRef.current, {
-          y: 20,
-          opacity: 0,
-          duration: 0.7,
-        }, '-=0.4');
+        tl.from(
+          subtextRef.current,
+          {
+            y: 15,
+            opacity: 0,
+            duration: 0.6,
+          },
+          "-=0.35",
+        );
       }
-      if (buttonsRef.current && buttonsRef.current.children && buttonsRef.current.children.length > 0) {
-        tl.from(buttonsRef.current.children, {
-          y: 15,
-          opacity: 0,
-          stagger: 0.15,
-          duration: 0.6,
-        }, '-=0.4');
+
+      if (buttonsRef.current?.children.length > 0) {
+        tl.from(
+          buttonsRef.current.children,
+          {
+            y: 12,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 0.5,
+          },
+          "-=0.3",
+        );
       }
-      if (trustStripRef.current && trustStripRef.current.children && trustStripRef.current.children.length > 0) {
-        tl.from(trustStripRef.current.children, {
-          y: 20,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 0.6,
-        }, '-=0.3');
+
+      if (trustStripRef.current?.children.length > 0) {
+        tl.from(
+          trustStripRef.current.children,
+          {
+            y: 15,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.5,
+          },
+          "-=0.2",
+        );
       }
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
+  // Trust Highlights
   const trustHighlights = [
     {
       icon: Gauge,
       title: "Calibrated Instruments",
-      desc: "Periodic calibration traceable to national standards"
+      desc: "Periodic calibration traceable to national standards",
     },
     {
       icon: Layers,
       title: "Strict Standard Methods",
-      desc: "Testing strictly to IS, ASTM, IRC & MoRTH protocols"
+      desc: "Testing strictly to IS, ASTM, IRC & MoRTH protocols",
     },
     {
       icon: Shield,
       title: "Traceable Reporting",
-      desc: "Tamper-evident civil engineering test certificates"
+      desc: "Tamper-evident civil engineering test certificates",
     },
     {
       icon: CheckCircle2,
       title: "Field & Lab Readiness",
-      desc: "Highway diamond core cutting & in-situ pavement analysis"
-    }
+      desc: "Highway diamond core cutting & in-situ pavement analysis",
+    },
   ];
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       ref={heroRef}
-      className="relative pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-24 bg-navy-950 overflow-hidden text-white border-b border-navy-800"
+      className="relative pt-24 sm:pt-36 lg:pt-40 pb-4 sm:pb-8 lg:pb-10 bg-navy-950 overflow-hidden text-white border-b border-navy-800"
     >
-      {/* Background Cinematic Visual with Dark Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=2000&q=85"
-          alt="Highway construction and asphalt paving laboratory testing background"
-          className="w-full h-full object-cover object-center filter brightness-[0.28] contrast-125 transform scale-105 transition-transform duration-1000"
+          alt="Highway construction and asphalt paving"
+          className="w-full h-full object-cover object-center brightness-[0.28] contrast-125 scale-105"
           loading="eager"
         />
-        {/* Subtle Engineering Grid and Vignette Overlay */}
+
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/75 to-navy-900/60" />
+
+        {/* Engineering Grid */}
         <div className="absolute inset-0 bg-grid-pattern opacity-15" />
-        <div className="absolute top-1/4 -right-48 w-96 h-96 bg-safety-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        {/* Background Glow */}
+        <div className="absolute top-1/4 -right-48 w-96 h-96 bg-safety-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Hero Content */}
         <div className="max-w-4xl">
           {/* Engineering Verification Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-800/90 border border-navy-700/80 text-graphite-300 text-xs sm:text-sm font-medium mb-6 shadow-sm backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-safety-500 animate-pulse" />
-            <span className="text-safety-400 font-semibold uppercase tracking-wider text-[11px] sm:text-xs">
+          <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 px-3 py-2 rounded-xl sm:rounded-full bg-navy-800/90 border border-navy-700/80 text-graphite-300 text-xs sm:text-sm font-medium mb-5 sm:mb-6 shadow-sm backdrop-blur-md max-w-full">
+            <span className="w-2 h-2 rounded-full bg-safety-500 animate-pulse shrink-0" />
+
+            <span className="text-safety-400 font-semibold uppercase tracking-wider text-[10px] sm:text-xs">
               Material Testing & Engineering Lab
             </span>
-            <span className="text-graphite-600">|</span>
-            <span className="hidden sm:inline text-graphite-300">
+
+            <span className="hidden sm:inline text-graphite-600">|</span>
+
+            <span className="w-full sm:w-auto text-graphite-300 text-[11px] sm:text-sm leading-relaxed">
               Bitumen · Highway Cores · Concrete · Soil · Aggregates
             </span>
           </div>
 
-          {/* Master Headline */}
-          <h1 
+          {/* Main Heading */}
+          <h1
             ref={headlineRef}
-            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6 font-display"
+            className="text-[clamp(2rem,7vw,3.75rem)] font-extrabold text-white tracking-tight leading-[1.12] mb-5 sm:mb-6 font-display break-words"
           >
-            Precision Testing. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-safety-400 via-safety-500 to-amber-300">
+            Precision Testing.
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-safety-400 via-safety-500 to-amber-300">
               Reliable Results.
-            </span> <br />
-            Stronger Infrastructure.
+            </span>
+            <span className="block">Stronger Infrastructure.</span>
           </h1>
 
-          {/* Supporting Text */}
-          <p 
+          {/* Supporting Description */}
+          <p
             ref={subtextRef}
-            className="text-base sm:text-lg lg:text-xl text-graphite-300 leading-relaxed mb-10 max-w-3xl font-normal"
+            className="text-base sm:text-lg lg:text-xl text-graphite-300 leading-relaxed mb-3 sm:mb-4 max-w-3xl font-normal"
           >
             {labConfig.description}
           </p>
 
-          {/* Action CTAs */}
-          <div 
+          {/* Action Buttons */}
+          <div
             ref={buttonsRef}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-6"
           >
+            {/* Request Quote */}
             <a
               href="#contact"
               onClick={(e) => {
@@ -156,6 +189,7 @@ export const Hero = ({ onExploreServices, onRequestQuote }) => {
               <ArrowRight className="w-4 h-4 ml-0.5" />
             </a>
 
+            {/* Explore Services */}
             <a
               href="#services"
               onClick={(e) => {
@@ -171,25 +205,30 @@ export const Hero = ({ onExploreServices, onRequestQuote }) => {
           </div>
         </div>
 
-        {/* Compact Trust and Capability Strip */}
-        <div 
+        {/* Trust and Capability Strip */}
+        <div
           ref={trustStripRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 border-t border-navy-800/80"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-2 sm:pt-4 border-t border-navy-800/80"
         >
           {trustHighlights.map((item, idx) => {
             const Icon = item.icon;
+
             return (
               <div
                 key={idx}
                 className="flex items-start gap-3.5 p-4 rounded-xl bg-navy-900/60 border border-navy-800/70 backdrop-blur-sm hover:border-navy-700 transition-colors"
               >
+                {/* Icon */}
                 <div className="p-2.5 rounded-lg bg-navy-800 text-safety-400 shrink-0 border border-navy-700">
                   <Icon className="w-5 h-5" />
                 </div>
-                <div>
+
+                {/* Content */}
+                <div className="min-w-0">
                   <h4 className="text-sm font-semibold text-white tracking-wide">
                     {item.title}
                   </h4>
+
                   <p className="text-xs text-graphite-400 mt-0.5 leading-snug">
                     {item.desc}
                   </p>

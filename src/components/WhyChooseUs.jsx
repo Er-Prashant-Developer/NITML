@@ -1,49 +1,52 @@
-import React from 'react';
-import { 
-  ShieldCheck, 
-  FileText, 
-  Users, 
-  MapPin, 
-  Sliders, 
-  Microscope 
-} from 'lucide-react';
+import React from "react";
+import {
+  ShieldCheck,
+  FileText,
+  Users,
+  MapPin,
+  Sliders,
+  Microscope,
+} from "lucide-react";
 
 export const WhyChooseUs = () => {
   const strengths = [
     {
       title: "Strict Method-Based Testing",
       desc: "Zero deviation from published standard protocols. Temperatures, loading rates, and specimen curing environments are continuously monitored and logged.",
-      icon: Microscope
+      icon: Microscope,
     },
     {
       title: "Quality-Focused Laboratory Protocols",
       desc: "Our machinery undergoes scheduled calibrations against reference standards, preventing drift and ensuring consistency across all repeated test batches.",
-      icon: Sliders
+      icon: Sliders,
     },
     {
       title: "Clear, Traceable Engineering Reports",
       desc: "Every certificate details raw observations, computational steps, calibrated equipment identifiers, and unambiguous comparison against target specifications.",
-      icon: FileText
+      icon: FileText,
     },
     {
       title: "Responsive Technical Communication",
       desc: "Direct communication with qualified civil and materials engineers who understand infrastructure project schedules and provide technical clarity.",
-      icon: Users
+      icon: Users,
     },
     {
       title: "Project-Specific Testing Protocols",
       desc: "Whether dealing with complex polymer-modified bitumen (PMB) specifications or highway mix verification, we customize sample matrices to your tender BOQ.",
-      icon: ShieldCheck
+      icon: ShieldCheck,
     },
     {
       title: "Field Highway Sampling Support",
       desc: "Equipped for on-demand pavement diamond core drilling, layer depth measurements, and coordinated sample receiving with clear chains of custody.",
-      icon: MapPin
-    }
+      icon: MapPin,
+    },
   ];
 
   return (
-    <section id="why-us" className="py-20 sm:py-28 bg-white border-b border-graphite-200">
+    <section
+      id="why-us"
+      className="py-20 sm:py-28 bg-white border-b border-graphite-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
@@ -51,10 +54,12 @@ export const WhyChooseUs = () => {
             Laboratory Value & Integrity
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight font-display mb-4">
-            Why Highway Developers & Contractors Rely on ATML
+            Why Highway Developers & Contractors Rely on NIMTL
           </h2>
           <p className="text-base sm:text-lg text-graphite-600 leading-relaxed">
-            Infrastructure decisions involve high financial stakes and public safety. We provide independent, reproducible material testing data with absolute integrity.
+            Infrastructure decisions involve high financial stakes and public
+            safety. We provide independent, reproducible material testing data
+            with absolute integrity.
           </p>
         </div>
 
