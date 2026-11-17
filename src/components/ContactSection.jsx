@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   Phone,
   Mail,
@@ -187,7 +188,7 @@ export const ContactSection = ({ preselectedTest, preselectedCategory }) => {
                     <span>
                       {labConfig?.contact?.address?.line1 ||
                         "Plot 48, Highway Industrial Corridor"}
-                      , {labConfig?.contact?.address?.line2 || "Phase-II"}
+                      , {labConfig?.contact?.address?.line2}
                     </span>
                     <br />
                     <span>
@@ -269,7 +270,7 @@ export const ContactSection = ({ preselectedTest, preselectedCategory }) => {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold shadow-md transition-all"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <FaWhatsapp className="w-4 h-4" />
                   <span>Chat on WhatsApp Directly</span>
                 </a>
               </div>
@@ -357,7 +358,7 @@ export const ContactSection = ({ preselectedTest, preselectedCategory }) => {
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors"
                     >
-                      <MessageSquare className="w-4 h-4" />
+                      <FaWhatsapp className="w-4 h-4" />
                       <span>Forward Details to WhatsApp</span>
                     </a>
 
@@ -664,7 +665,7 @@ export const ContactSection = ({ preselectedTest, preselectedCategory }) => {
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-sm transition-colors"
                       title="Send this request directly via WhatsApp"
                     >
-                      <MessageSquare className="w-4 h-4" />
+                      <FaWhatsapp className="w-4 h-4" />
                       <span>Send via WhatsApp</span>
                     </a>
                   </div>

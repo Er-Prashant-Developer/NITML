@@ -14,14 +14,15 @@ export const labConfig = {
     phone: "+91 9868565968",
     phoneSecondary: "+91 98111 22334",
     phoneTel: "+919868565968",
-    email: "testing@atml-lab.com",
+    email: "info@nimtl.com",
     emailQuotes: "quotes@atml-lab.com",
     address: {
-      line1: "Plot No. 48, Highway Industrial Corridor",
-      line2: "Phase-II, Near Toll Plaza Hub",
-      city: "Gurugram / NCR",
-      state: "Haryana",
-      pincode: "122050",
+      line1:
+        "Building No. 262, Road Ganeshpur, City Roorkee, District Haridwar",
+      line2: "",
+      city: "Roorkee",
+      state: "Uttrakhand",
+      pincode: "247667",
       country: "India",
       googleMapsEmbedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112061.09262729792!2d76.95317921935515!3d28.45949652233215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",

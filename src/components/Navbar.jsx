@@ -29,7 +29,7 @@ export const Navbar = ({ onRequestQuoteScroll }) => {
     { name: "Testing Process", href: "#process" },
     { name: "Why Choose Us", href: "#why-us" },
     { name: "Standards", href: "#standards" },
-    { name: "Gallery", href: "#gallery" },
+    // { name: "Gallery", href: "#gallery" },
     { name: "FAQs", href: "#faqs" },
     { name: "Contact", href: "#contact" },
   ];

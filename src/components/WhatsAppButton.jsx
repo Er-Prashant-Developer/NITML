@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MessageSquare, X } from "lucide-react";
+import { X } from "lucide-react";
 import { labConfig } from "../data/labConfig";
-
+import { FaWhatsapp } from "react-icons/fa";
 export const WhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(true);
 
@@ -37,7 +37,16 @@ export const WhatsAppButton = () => {
       >
         <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-safety-500 rounded-full border-2 border-white animate-ping" />
         <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-safety-500 rounded-full border-2 border-white" />
-        <MessageSquare className="w-7 h-7 fill-white/20" />
+        {/* <FaWhatsapp className="w-7 h-7 fill-white/20" /> */}
+        <FaWhatsapp
+          style={{
+            color: "#FFFFFF",
+            fill: "#FFFFFF",
+            opacity: 1,
+            filter: "none",
+          }}
+          className="w-9 h-9"
+        />
       </a>
     </div>
   );

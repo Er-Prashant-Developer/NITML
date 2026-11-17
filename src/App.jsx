@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { Preloader } from './components/Preloader';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { AboutSection } from './components/AboutSection';
-import { ServicesSection } from './components/ServicesSection';
-import { EquipmentShowcase } from './components/EquipmentShowcase';
-import { TestingProcess } from './components/TestingProcess';
-import { WhyChooseUs } from './components/WhyChooseUs';
-import { IndustriesServed } from './components/IndustriesServed';
-import { StandardsCompliance } from './components/StandardsCompliance';
-import { FutureCapabilities } from './components/FutureCapabilities';
-import { GallerySection } from './components/GallerySection';
-import { FaqSection } from './components/FaqSection';
-import { ContactSection } from './components/ContactSection';
-import { WhatsAppButton } from './components/WhatsAppButton';
-import { Footer } from './components/Footer';
-import { LegalModal } from './components/Modals/LegalModal';
+import React, { useState } from "react";
+import { Preloader } from "./components/Preloader";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { AboutSection } from "./components/AboutSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { EquipmentShowcase } from "./components/EquipmentShowcase";
+import { TestingProcess } from "./components/TestingProcess";
+import { WhyChooseUs } from "./components/WhyChooseUs";
+import { IndustriesServed } from "./components/IndustriesServed";
+import { StandardsCompliance } from "./components/StandardsCompliance";
+import { FutureCapabilities } from "./components/FutureCapabilities";
+import { GallerySection } from "./components/GallerySection";
+import { FaqSection } from "./components/FaqSection";
+import { ContactSection } from "./components/ContactSection";
+import { WhatsAppButton } from "./components/WhatsAppButton";
+import { Footer } from "./components/Footer";
+import { LegalModal } from "./components/Modals/LegalModal";
 
 export function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,40 +27,40 @@ export function App() {
     setPreselectedTest(test);
     setPreselectedCategory(category);
     // Smooth scroll to contact form
-    const contactElem = document.getElementById('contact');
+    const contactElem = document.getElementById("contact");
     if (contactElem) {
       const navOffset = 80;
       const elementPosition = contactElem.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
 
   const scrollToContact = () => {
-    const contactElem = document.getElementById('contact');
+    const contactElem = document.getElementById("contact");
     if (contactElem) {
       const navOffset = 80;
       const elementPosition = contactElem.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
 
   const scrollToServices = () => {
-    const servicesElem = document.getElementById('services');
+    const servicesElem = document.getElementById("services");
     if (servicesElem) {
       const navOffset = 80;
       const elementPosition = servicesElem.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -81,9 +81,9 @@ export function App() {
 
           {/* Main Content Sections */}
           <main className="flex-grow">
-            <Hero 
-              onExploreServices={scrollToServices} 
-              onRequestQuote={scrollToContact} 
+            <Hero
+              onExploreServices={scrollToServices}
+              onRequestQuote={scrollToContact}
             />
             <AboutSection />
             <ServicesSection onSelectTestForQuote={handleSelectTestForQuote} />
@@ -93,11 +93,11 @@ export function App() {
             <IndustriesServed />
             <StandardsCompliance />
             <FutureCapabilities />
-            <GallerySection />
+            {/* <GallerySection /> */}
             <FaqSection />
-            <ContactSection 
-              preselectedTest={preselectedTest} 
-              preselectedCategory={preselectedCategory} 
+            <ContactSection
+              preselectedTest={preselectedTest}
+              preselectedCategory={preselectedCategory}
             />
           </main>
 
@@ -109,9 +109,9 @@ export function App() {
 
           {/* Legal Modals (Privacy Policy / Terms of Service) */}
           {legalModalType && (
-            <LegalModal 
-              type={legalModalType} 
-              onClose={() => setLegalModalType(null)} 
+            <LegalModal
+              type={legalModalType}
+              onClose={() => setLegalModalType(null)}
             />
           )}
         </>
